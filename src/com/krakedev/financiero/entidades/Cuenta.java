@@ -41,18 +41,18 @@ public class Cuenta {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
-	//Metodo imprimir
+
+	// Metodo imprimir
 	public void imprimir() {
-        System.out.println("ID: " + id);
-        System.out.println("Saldo actual: " + saldoActual);
-        System.out.println("Tipo: " + tipo);
-        System.out.println("Cédula cliente: " + propietario.getCedula());
-        System.out.println("Nombre cliente: " + propietario.getNombre());
-        System.out.println("Apellido cliente: " + propietario.getApellido());
-    }
-	
-	//metodo getter y setter de propietario
+		System.out.println("ID: " + id);
+		System.out.println("Saldo actual: " + saldoActual);
+		System.out.println("Tipo: " + tipo);
+		System.out.println("Cédula cliente: " + propietario.getCedula());
+		System.out.println("Nombre cliente: " + propietario.getNombre());
+		System.out.println("Apellido cliente: " + propietario.getApellido());
+	}
+
+	// metodo getter y setter de propietario
 
 	public Cliente getPropietario() {
 		return propietario;
@@ -61,12 +61,5 @@ public class Cuenta {
 	public void setPropietario(Cliente propietario) {
 		this.propietario = propietario;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

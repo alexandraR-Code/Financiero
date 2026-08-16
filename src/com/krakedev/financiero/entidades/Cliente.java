@@ -6,9 +6,8 @@ public class Cliente {
 	private String cedula;
 	private String nombre;
 	private String apellido;
-	
-	
-	//constructor 
+
+	// constructor
 	public Cliente() {
 	}
 
@@ -17,7 +16,7 @@ public class Cliente {
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		
+
 	}
 
 	// Metodos setter y getter
@@ -45,9 +44,9 @@ public class Cliente {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
+
 	// Metodo imprimir
-	
+
 	public void imprimir() {
 		System.out.println("Cedula: " + this.getCedula());
 		System.out.println("Nombre: " + this.getNombre());

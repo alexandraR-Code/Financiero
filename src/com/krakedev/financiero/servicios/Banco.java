@@ -3,7 +3,6 @@ package com.krakedev.financiero.servicios;
 import com.krakedev.financiero.entidades.Cliente;
 import com.krakedev.financiero.entidades.Cuenta;
 
-
 public class Banco {
 	// atributos
 	private int ultimoCodigo = 1000;
@@ -17,42 +16,55 @@ public class Banco {
 	public void setUltimoCodigo(int ultimoCodigo) {
 		this.ultimoCodigo = ultimoCodigo;
 	}
-	
-	//Constructor
+
+	// Constructor
 	public Banco() {
 	}
-	
-	//metodo crearCuenta
+
+	// metodo crearCuenta
 	public Cuenta crearCuenta(Cliente cliente) {
-	    // Convertir ultimoCodigo a String
-	    String codigoStr = ultimoCodigo + "";
-	    // Incrementar ultimoCodigo
-	    ultimoCodigo++;
-	    // Crear la cuenta con ese ID (constructor solo recibe id)
-	    Cuenta cuenta = new Cuenta(codigoStr);
-	    // Asignar el cliente recibido
-	    cuenta.setPropietario(cliente);
-	    // Retorna la cuenta creada
-	    return cuenta;
+		// Convertir ultimoCodigo a String
+		String codigoStr = ultimoCodigo + "";
+		// Incrementar ultimoCodigo
+		ultimoCodigo++;
+		// Crear la cuenta con ese ID (constructor solo recibe id)
+		Cuenta cuenta = new Cuenta(codigoStr);
+		// Asignar el cliente recibido
+		cuenta.setPropietario(cliente);
+		// Retorna la cuenta creada
+		return cuenta;
 	}
-	//metodo depositar
+
+	// metodo depositar
 	public boolean depositar(double monto, Cuenta cuenta) {
-		if(monto > 0 ) {
+		if (monto > 0) {
 			cuenta.setSaldoActual(cuenta.getSaldoActual() + monto);
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
+
 	// metodo retirar
-		public boolean retirar(double monto, Cuenta cuenta) {
-			if(monto > 0 && monto <= cuenta.getSaldoActual()) {
-				cuenta.setSaldoActual(cuenta.getSaldoActual() - monto);
-				return true;
-			}else {
-				return false;	
-			}
+	public boolean retirar(double monto, Cuenta cuenta) {
+		if (monto > 0 && monto <= cuenta.getSaldoActual()) {
+			cuenta.setSaldoActual(cuenta.getSaldoActual() - monto);
+			return true;
+		} else {
+			return false;
 		}
-	
+	}
+
+	// metodo transferir
+	public boolean transferir(Cuenta origen, Cuenta destino) {
+	    double monto = origen.getSaldoActual();
+	    boolean retiroExitoso = retirar(monto, origen);
+	    if (retiroExitoso) {
+	        depositar(monto, destino);
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
 
 }
