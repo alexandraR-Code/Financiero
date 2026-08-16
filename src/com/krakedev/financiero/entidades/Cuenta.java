@@ -6,6 +6,7 @@ public class Cuenta {
 	private String id;
 	private double saldoActual;
 	private String tipo;
+	private Cliente propietario;
 
 	// Constructor
 
@@ -45,6 +46,17 @@ public class Cuenta {
 		System.out.println("Id: " + this.getId());
 		System.out.println("Saldo actual: " + this.getSaldoActual());
 		System.out.println("Tipo de cuenta: " + this.getTipo());
+		System.out.println("Propietario de cuenta: " + propietario.getCedula());
+	}
+	
+	//metodo getter y setter de propietario
+
+	public Cliente getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Cliente propietario) {
+		this.propietario = propietario;
 	}
 	
 	
