@@ -37,11 +37,20 @@ public class Banco {
 	}
 	//metodo depositar
 	public boolean depositar(double monto, Cuenta cuenta) {
-		if(monto > 0) {
+		if(monto > 0 ) {
 			cuenta.setSaldoActual(cuenta.getSaldoActual() + monto);
 			return true;
 		}else {
 			return false;
+		}
+	}
+	// metodo retirar
+	public boolean retirar(double monto, Cuenta cuenta) {
+		if(monto > 0 && monto <= cuenta.getSaldoActual()) {
+			cuenta.setSaldoActual(cuenta.getSaldoActual() - monto);
+			return true;
+		}else {
+			return false;	
 		}
 	}
 
