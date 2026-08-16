@@ -14,6 +14,7 @@ public class Cuenta {
 		this.id = id;
 		this.saldoActual = 0;
 		this.tipo = "A";
+		this.propietario = new Cliente();
 	}
 
 	// Metodos getter y setter
@@ -43,11 +44,13 @@ public class Cuenta {
 	
 	//Metodo imprimir
 	public void imprimir() {
-		System.out.println("Id: " + this.getId());
-		System.out.println("Saldo actual: " + this.getSaldoActual());
-		System.out.println("Tipo de cuenta: " + this.getTipo());
-		System.out.println("Propietario de cuenta: " + propietario.getCedula());
-	}
+        System.out.println("ID: " + id);
+        System.out.println("Saldo actual: " + saldoActual);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Cédula cliente: " + propietario.getCedula());
+        System.out.println("Nombre cliente: " + propietario.getNombre());
+        System.out.println("Apellido cliente: " + propietario.getApellido());
+    }
 	
 	//metodo getter y setter de propietario
 

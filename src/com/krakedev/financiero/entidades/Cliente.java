@@ -8,10 +8,8 @@ public class Cliente {
 	private String apellido;
 
 	// constructor
-	public Cliente(String cedula, String nombre, String apellido) {
-		this.cedula = cedula;
-		this.nombre = nombre;
-		this.apellido = apellido;
+	public Cliente() {
+		
 	}
 
 	// Metodos setter y getter
